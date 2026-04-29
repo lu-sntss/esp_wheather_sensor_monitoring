@@ -1,6 +1,6 @@
 /*
 
-gcc listenner.c -o ouvinte -lmosquitto
+gcc listenner.c -o ouvinte -lmosquitto -lcurl
 
 */
 
@@ -8,7 +8,7 @@ gcc listenner.c -o ouvinte -lmosquitto
 #include <mosquitto.h>
 #include <curl/curl.h>
 
-const char* VERCEL_URL = "texte";
+const char* VERCEL_URL = "http://localhost:3000/api/dados";
 
 // FUnção para empacotar o json e enviar ao vercel
 void enviar_para_vercel(const char* json_payload){
