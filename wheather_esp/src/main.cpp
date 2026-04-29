@@ -29,7 +29,7 @@ sudo ufw delete allow 1883/tcp
 
 // Constantes de conexão
 const char* ssid = "N305-3033124-LL-lu"; 
-const char* password = "sonic301101"; 
+const char* password = ""; 
 const char* mqtt_server = "10.42.0.1"; // O IP do notebook
 
 // Instancia os objetos
