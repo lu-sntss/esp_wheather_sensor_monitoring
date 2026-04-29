@@ -41,7 +41,7 @@ Adafruit_BMP280 bmp;
 // Variáveis de tempo para não travar o loop
 unsigned long ultima_leitura = 0;
 const long intervalo = 5000;
-const long intervalo_leitura = 2000;
+const long intervalo_leitura = 500;
 
 void setup_wifi() {
   delay(10);

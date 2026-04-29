@@ -18,7 +18,7 @@ export default function Home() {
       }
     };
 
-    const intervalo = setInterval(puxarDados, 2000);
+    const intervalo = setInterval(puxarDados, 500); // Configuração de intervalo
     return () => clearInterval(intervalo);
   }, []);
 

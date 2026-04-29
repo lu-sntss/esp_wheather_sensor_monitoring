@@ -8,7 +8,9 @@ gcc listenner.c -o ouvinte -lmosquitto -lcurl
 #include <mosquitto.h>
 #include <curl/curl.h>
 
-const char* VERCEL_URL = "http://localhost:3000/api/dados";
+const char* VERCEL_URL = "https://esp-wheather-sensor-monitoring.vercel.app/api/dados";
+// const char* VERCEL_URL = "http://localhost:3000/api/dados";
+
 
 // FUnção para empacotar o json e enviar ao vercel
 void enviar_para_vercel(const char* json_payload){
@@ -58,9 +60,22 @@ void on_connect(struct mosquitto *mosq, void *obj, int rc){
     }
 }
 
+int enviar_para_esp(int payload){
+    int response;
+
+} int response;
+
+void check_ping(int current_sequence){
+    current_sequence++;
+
+    enviar_para_esp(current_sequence);
+
+}
+
 int main(){
     struct mosquitto *mosq;
     int rc;
+    int current_sequence = 0;
 
     // Inicializa a biblioteca cURL
     curl_global_init(CURL_GLOBAL_ALL);
