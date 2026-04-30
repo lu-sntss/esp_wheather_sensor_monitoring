@@ -3,7 +3,7 @@
 Este projeto implementa uma arquitetura robusta de IoT para monitoramento climático. Um ESP8266 coleta dados ambientais usando os sensores BMP280 e BH1750 e transmite via MQTT para um Edge Gateway local (rodando Ubuntu/Q4OS). 
 O Gateway utiliza um ouvinte (Listener) escrito em C puro, otimizado para baixo consumo de recursos, que recebe os pacotes e os despacha para a nuvem via requisição HTTP POST (Vercel).
 
-## 🛠 Hardware Utilizado
+## Hardware Utilizado
 * ESP8266 (NodeMCU 1.0 ou genérico)
 * Sensor BMP280 (Temperatura e Pressão atmosférica) - I2C
 * Sensor BH1750 (Luminosidade) - I2C
@@ -11,7 +11,7 @@ O Gateway utiliza um ouvinte (Listener) escrito em C puro, otimizado para baixo 
 
 ---
 
-## 💻 1. Configuração do Firmware (ESP8266)
+## 1. Configuração do Firmware (ESP8266)
 
   O código embarcado foi desenvolvido utilizando o **PlatformIO** no VS Code. Não é necessário instalar bibliotecas manualmente na IDE do Arduino.
   
@@ -81,11 +81,21 @@ O Gateway utiliza um ouvinte (Listener) escrito em C puro, otimizado para baixo 
     gcc listener.c -o ouvinte -lmosquitto -lcurl
   
   Para iniciar a escuta da rede e o encaminhamento de dados:
-  Bash
-  
-  ./ouvinte
+    Bash
+    
+    ./ouvinte
 
-## 4. Ferramentas de Teste (Debugging)
+## 4. Front-end
+
+  Front-end implementado utilizando react(nodeJS).
+  Necessário realizar a instalação do framework e executar 
+    Bash
+    
+    npm run dev
+  
+  para executar build em desenvolvimento para projeto
+
+## 5. Ferramentas de Teste (Debugging)
 
   Caso precise apenas escutar o tráfego da rede sem rodar o script em C:
       Via Terminal no Linux:
